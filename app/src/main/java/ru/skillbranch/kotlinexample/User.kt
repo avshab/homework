@@ -29,7 +29,8 @@ class User private constructor(
 
     private var phone: String? = null
         set(value) {
-            field = value?.replace("[^+\\d]".toRegex(), replacement = "")
+            if (value.isNullOrBlank()) field = null
+            else field = value?.replace("[^+\\d]".toRegex(), replacement = "")
         }
 
     private var _login: String? = null
@@ -76,7 +77,7 @@ class User private constructor(
         val code = generateAccessCode()
         passwordHash = encrypt(code)
         accessCode = code
-        sendAccessCodeToUser(rawPhone , code)
+        sendAccessCodeToUser(rawPhone, code)
     }
 
 
@@ -91,6 +92,19 @@ class User private constructor(
 
         passwordHash = encrypt(password)
     }
+
+    //for csv with email
+    constructor(
+        firstName: String,
+        lastName: String?,
+        email: String?,
+        hash: String,
+        phone: String?
+    ) : this(firstName, lastName, email = email, rawPhone = phone, meta = mapOf("src" to "csv")) {
+
+        passwordHash = hash
+    }
+
 
     private fun generateAccessCode(): String {
         val possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -132,7 +146,7 @@ class User private constructor(
         else throw IllegalArgumentException("The entered password does not much the current password")
     }
 
-    fun changePassword() : String {
+    fun changePassword(): String {
         val code = generateAccessCode()
         passwordHash = encrypt(code)
         accessCode = code
@@ -158,6 +172,20 @@ class User private constructor(
                 )
                 else -> throw IllegalArgumentException("Email or phone be not null or blank")
             }
+        }
+
+        fun makeImportUser(
+            fullName: String? = null,
+            email: String? = null,
+            access: String? = null,
+            phone: String? = null
+        ): User? {
+            if (fullName.isNullOrBlank() || access.isNullOrBlank()) return null
+
+            val (firstName, lastName) = fullName.fullNameToPair()
+            val (salt, hash) = access.split(":")
+
+            return User(firstName, lastName, email, hash, phone)
         }
 
         private fun String.fullNameToPair(): Pair<String, String?> {

@@ -1,7 +1,13 @@
 package ru.skillbranch.kotlinexample.extensions
 
-fun String.isValidPhone() =
-    if (trimPhone().startsWith("+") && trimPhone().length == 12) true
-    else false
-
-fun String.trimPhone() = this.replace("[^+\\d]".toRegex(), replacement = "")
+fun <T> List<T>.dropLastUntil(predicate: (T) -> Boolean): List<T> {
+    if (!isEmpty()) {
+        val iterator = listIterator(size)
+        while (iterator.hasPrevious()) {
+            if (predicate(iterator.previous())) {
+                return take(iterator.nextIndex())
+            }
+        }
+    }
+    return emptyList()
+}
