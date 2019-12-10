@@ -1,4 +1,4 @@
-package ru.skillbranch.kotlinexample.extensions
+package ru.skillbranch.kotlinexample.extentions
 
 fun String.isValidPhone() =
     if (trimPhone().startsWith("+") && trimPhone().length == 12) true
