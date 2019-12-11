@@ -74,6 +74,7 @@ class User private constructor(
         rawPhone: String
     ) : this(firstName, lastName, rawPhone = rawPhone, meta = mapOf("auth" to "sms")) {
         println("Secondary phone constructor")
+        salt = defineSalt()
         val code = generateAccessCode()
         passwordHash = encrypt(code)
         accessCode = code
@@ -89,19 +90,20 @@ class User private constructor(
         password: String
     ) : this(firstName, lastName, email = email, meta = mapOf("auth" to "password")) {
         println("Secondary email constructor")
-
+        salt = defineSalt()
         passwordHash = encrypt(password)
     }
 
-    //for csv with email
+    //for csv
     constructor(
         firstName: String,
         lastName: String?,
         email: String?,
         hash: String,
+        salt: String?,
         phone: String?
     ) : this(firstName, lastName, email = email, rawPhone = phone, meta = mapOf("src" to "csv")) {
-
+        if(!salt.isNullOrBlank()) this.salt = salt
         passwordHash = hash
     }
 
@@ -118,11 +120,16 @@ class User private constructor(
         }.toString()
     }
 
-    private val salt: String by lazy {
-        ByteArray(16).also {
-            SecureRandom().nextBytes(it)
-        }.toString()
-    }
+    private lateinit var salt: String
+
+    fun defineSalt() =  ByteArray(16).also {
+        SecureRandom().nextBytes(it)
+    }.toString()
+//    private val salt: String by lazy {
+//        ByteArray(16).also {
+//            SecureRandom().nextBytes(it)
+//        }.toString()
+//    }
 
     private fun encrypt(password: String) = salt.plus(password).md5()
 
@@ -185,7 +192,7 @@ class User private constructor(
             val (firstName, lastName) = fullName.fullNameToPair()
             val (salt, hash) = access.split(":")
 
-            return User(firstName, lastName, email, hash, phone)
+            return User(firstName, lastName, email, hash, salt, phone)
         }
 
         private fun String.fullNameToPair(): Pair<String, String?> {
