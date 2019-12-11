@@ -49,7 +49,8 @@ class User private constructor(
         check(email.isNullOrBlank() || rawPhone.isNullOrBlank()) { "Email or phone must be not blank" }
 
         phone = rawPhone
-        login = email ?: phone!!
+        login = if( email.isNullOrEmpty() ) phone!!
+        else email
 
         userInfo = """
             firstName: $firstName
@@ -57,7 +58,7 @@ class User private constructor(
             login: $login
             fullName: $fullName
             initials: $initials
-            email: $email
+            email: ${if(email.isNullOrEmpty()) null else email}
             phone: $phone
             meta: $meta
         """.trimIndent()
@@ -94,7 +95,7 @@ class User private constructor(
         passwordHash = encrypt(password)
     }
 
-    //for csv
+    //for csv email
     constructor(
         firstName: String,
         lastName: String?,
@@ -104,8 +105,22 @@ class User private constructor(
         phone: String?
     ) : this(firstName, lastName, email = email, rawPhone = phone, meta = mapOf("src" to "csv")) {
         if(!salt.isNullOrBlank()) this.salt = salt
+        accessCode = salt //?
         passwordHash = hash
     }
+
+//    //for csv phone
+//    constructor(
+//        firstName: String,
+//        lastName: String?,
+//        hash: String,
+//        salt: String?,
+//        phone: String?
+//    ) : this(firstName, lastName, rawPhone = phone, meta = mapOf("src" to "csv")) {
+//        if(!salt.isNullOrBlank()) this.salt = salt
+//        accessCode = salt //?
+//        passwordHash = hash
+//    }
 
 
     private fun generateAccessCode(): String {
