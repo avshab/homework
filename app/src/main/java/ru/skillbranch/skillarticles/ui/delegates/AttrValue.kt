@@ -1,14 +1,10 @@
-package ru.skillbranch.skillarticles.ui.custom.delegates
+package ru.skillbranch.skillarticles.ui.delegates
 
 import android.content.Context
 import android.content.res.Resources
 import android.util.TypedValue
-import android.view.View
-import android.widget.TextView
 import androidx.annotation.AttrRes
-import androidx.core.view.isVisible
 import kotlin.properties.ReadOnlyProperty
-import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 class AttrValue (@AttrRes private val res: Int): ReadOnlyProperty<Context, Int> {

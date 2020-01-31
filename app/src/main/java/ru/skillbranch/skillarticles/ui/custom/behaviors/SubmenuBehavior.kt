@@ -1,16 +1,12 @@
-package ru.skillbranch.skillarticles.ui.custom
+package ru.skillbranch.skillarticles.ui.custom.behaviors
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.core.view.ViewCompat
-import androidx.core.view.marginBottom
 import androidx.core.view.marginRight
-import ru.skillbranch.skillarticles.extensions.dpToPx
-import kotlin.math.hypot
-import kotlin.math.max
-import kotlin.math.min
+import ru.skillbranch.skillarticles.ui.custom.ArticleSubmenu
+import ru.skillbranch.skillarticles.ui.custom.Bottombar
 
 
 class SubmenuBehavior() : CoordinatorLayout.Behavior<ArticleSubmenu>() {
