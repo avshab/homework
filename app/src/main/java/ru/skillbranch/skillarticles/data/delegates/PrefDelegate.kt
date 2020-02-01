@@ -1,6 +1,8 @@
 package ru.skillbranch.skillarticles.data.delegates
 
+import androidx.fragment.app.FragmentActivity
 import ru.skillbranch.skillarticles.data.local.PrefManager
+import ru.skillbranch.skillarticles.viewmodels.base.ViewModelDelegate
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -25,24 +27,5 @@ class PrefDelegate<T>(private val defaultValue: T) : ReadWriteProperty<PrefManag
             value is Float -> thisRef.preferences.edit().putFloat(property.name, value).apply()
             else -> return
         }
-    }
-}
-
-class TrimDelegate : ReadWriteProperty<Any?, String> {
-
-    private var trimmedValue: String = ""
-
-    override fun getValue(
-        thisRef: Any?,
-        property: KProperty<*>
-    ): String {
-        return trimmedValue
-    }
-
-    override fun setValue(
-        thisRef: Any?,
-        property: KProperty<*>, value: String
-    ) {
-        trimmedValue = value.trim()
     }
 }
