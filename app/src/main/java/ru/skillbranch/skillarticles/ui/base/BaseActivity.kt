@@ -2,6 +2,7 @@ package ru.skillbranch.skillarticles.ui.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
 import ru.skillbranch.skillarticles.viewmodels.base.*
 
 abstract class BaseActivity<T : BaseViewModel<out IViewModelState>> : AppCompatActivity() {
@@ -9,7 +10,12 @@ abstract class BaseActivity<T : BaseViewModel<out IViewModelState>> : AppCompatA
     protected abstract val viewModel : T
     protected abstract val layout:Int
 
-    internal inline fun provideViewModel(arg : Any?) : ViewModelDelegate<T> = ViewModelDelegate<T>(this.viewModel.javaClass, arg)
+    internal inline fun <reified T : ViewModel> provideViewModel(arg : Any?) : ViewModelDelegate<T> {
+        return ViewModelDelegate(
+            T::class.java,
+            arg
+        )
+    }
 
     //set listeners, tuning views
     abstract fun setupViews()
