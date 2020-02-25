@@ -54,14 +54,15 @@ class BlockCodeSpan(
                     canvas.drawText(text, start, end, x + padding, y.toFloat(), paint)
                 }
             }
+
             Element.BlockCode.Type.END -> {
                 paint.forBackground {
 
                     val corners = floatArrayOf(
-                        0f, 0f,   // Top left radius in px
-                        0f, 0f,   // Top right radius in px
-                        cornerRadius, cornerRadius,     // Bottom right radius in px
-                        cornerRadius, cornerRadius      // Bottom left radius in px
+                        0f, 0f,
+                        0f, 0f,
+                        cornerRadius, cornerRadius,
+                        cornerRadius, cornerRadius
                     )
 
                     rect.set(
@@ -78,6 +79,7 @@ class BlockCodeSpan(
                     canvas.drawText(text, start, end, x + padding, y.toFloat(), paint)
                 }
             }
+
             Element.BlockCode.Type.MIDDLE -> {
                 paint.forBackground {
                     rect.set(
@@ -92,6 +94,7 @@ class BlockCodeSpan(
                     canvas.drawText(text, start, end, x + padding, y.toFloat(), paint)
                 }
             }
+
             Element.BlockCode.Type.SINGLE -> {
                 paint.forBackground {
                     rect.set(
@@ -168,6 +171,7 @@ class BlockCodeSpan(
         val oldTypeface = typeface
         val oldSize = textSize
         val oldColor = color
+
         typeface = Typeface.create(Typeface.MONOSPACE, oldStyle)
         textSize *= 0.85f
         color = textColor
@@ -177,6 +181,5 @@ class BlockCodeSpan(
         typeface = oldTypeface
         textSize = oldSize
         color = oldColor
-
     }
 }
