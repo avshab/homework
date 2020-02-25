@@ -36,17 +36,17 @@ object MarkdownParser {
         return MarkdownText(elements)
     }
 
-    private fun Element.join():String{
+    private fun Element.join(): String {
         val data: String = this.text.toString()
         val childs = this.elements.join()
-        val result =  if(childs.isNotBlank()){
+        val result = if (childs.isNotBlank()) {
             childs
         } else data
 
         return result
     }
 
-    private fun List<Element>.join():String{
+    private fun List<Element>.join(): String {
         return this.map {
             it.join()
         }.joinToString("")
@@ -56,7 +56,7 @@ object MarkdownParser {
      * clear markdown text to string without markdown characters
      */
     fun clear(string: String?): String? {
-        string?:return null
+        string ?: return null
         val elements = mutableListOf<Element>()
         elements.addAll(findElements(string))
 
@@ -198,7 +198,7 @@ object MarkdownParser {
                 9 -> {
                     //full text for regex
                     text = string.subSequence(startIndex, endIndex)
-                    val (title: String,  link: String) = "\\[(.*)]\\((.*)\\)".toRegex().find(text)!!.destructured
+                    val (title: String, link: String) = "\\[(.*)]\\((.*)\\)".toRegex().find(text)!!.destructured
                     val element = Element.Link(link, title)
                     parents.add(element)
                     lastStartIndex = endIndex
@@ -206,7 +206,7 @@ object MarkdownParser {
                 //10 -> NUMERIC LIST
                 10 -> {
                     text = string.subSequence(startIndex, endIndex)
-                    val order = text.subSequence(0, text.indexOf('.'))
+                    val order = text.subSequence(0, text.indexOf('.') + 1)
                     val str = text.subSequence(text.indexOf('.').plus(2), text.lastIndex.plus(1))
                     val element = Element.OrderedListItem(order.toString(), str)
                     parents.add(element)
@@ -218,12 +218,18 @@ object MarkdownParser {
                     text = string.subSequence(startIndex.plus(3), endIndex.minus(3))
                     val kkk = text.lines()
                     val data = text.lines()
-                    if(data.size == 1) {
+                    if (data.size == 1) {
                         parents.add(Element.BlockCode(Element.BlockCode.Type.SINGLE, text))
                     } else {
-                        parents.add(Element.BlockCode(Element.BlockCode.Type.START, data.first() + '\n'))
+                        parents.add(
+                            Element.BlockCode(
+                                Element.BlockCode.Type.START,
+                                data.first() + '\n'
+                            )
+                        )
                         data.subList(1, data.lastIndex).forEach {
-                            val element = Element.BlockCode(Element.BlockCode.Type.MIDDLE, it + '\n')
+                            val element =
+                                Element.BlockCode(Element.BlockCode.Type.MIDDLE, it + '\n')
                             parents.add(element)
                         }
                         parents.add(Element.BlockCode(Element.BlockCode.Type.END, data.last()))
