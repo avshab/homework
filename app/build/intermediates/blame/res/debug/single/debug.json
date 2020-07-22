@@ -1,0 +1,254 @@
+[
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_filter_list_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_filter_list_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_profile.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_share_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_share_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_bookmark_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_bookmark_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_link_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_link_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_choose_category_dialog.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_choose_category_dialog.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_dashboard_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_item_comment.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/item_comment.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_activity_root.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/activity_root.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_privacy_policy.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_privacy_policy.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_search_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_search_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_logo_full.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_logo_full.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_articles.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_articles.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/color_tint_search_color.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/color/tint_search_color.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ripple.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ripple.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_search_view_layout.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/search_view_layout.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_keyboard_arrow_up_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_keyboard_arrow_up_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_bookmark_border_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_bookmark_border_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_reply_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_reply_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_favorite_border_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_favorite_border_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/menu_bottom_nav_menu.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/navigation_mobile_navigation.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_android_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_android_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_title_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_title_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_auth.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_auth.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_logo.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_layout_submenu.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/layout_submenu.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/menu_menu_search.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/menu/menu_search.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_article.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_article.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_logo_placeholder.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/logo_placeholder.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_transcriptions.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_transcriptions.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_keyboard_arrow_down_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_keyboard_arrow_down_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_item_article.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/item_article.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_like_states.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/like_states.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_account_circle_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_account_circle_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_item_category_dialog.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/item_category_dialog.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_layout_bottombar.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/layout_bottombar.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_activity_test.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/activity_test.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_translate_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_translate_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-night_ic_logo_full.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable-night/ic_logo_full.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_favorite_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_favorite_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/color_tint_color.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/color/tint_color.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_bookmark_states.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/bookmark_states.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_format_size_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_format_size_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_content_copy_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_content_copy_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_insert_comment_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_insert_comment_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_brightness_medium_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_brightness_medium_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_close_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_close_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/color_ripple_color.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/color/ripple_color.xml"
+    }
+]
