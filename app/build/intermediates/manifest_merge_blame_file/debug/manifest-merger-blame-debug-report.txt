@@ -35,34 +35,35 @@
 22-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:13:9-54
 23        android:supportsRtl="true"
 23-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:14:9-35
-24        android:theme="@style/AppTheme" >
-24-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:15:9-40
-25        <activity
-25-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:16:9-24:20
-26            android:name="ru.skillbranch.skillarticles.ui.RootActivity"
-26-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:17:13-44
-27            android:windowSoftInputMode="adjustNothing" >
-27-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:18:13-56
-28            <intent-filter>
-28-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:19:13-23:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:20:17-69
-29-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:20:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:22:17-77
-31-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:22:27-74
-32            </intent-filter>
-33        </activity>
-34
-35        <service
-35-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
-36            android:name="androidx.room.MultiInstanceInvalidationService"
-36-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
-37            android:directBootAware="true"
-37-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
-38            android:exported="false" />
-38-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
-39    </application>
-40
-41</manifest>
+24        android:testOnly="true"
+25        android:theme="@style/AppTheme" >
+25-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:15:9-40
+26        <activity
+26-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:16:9-24:20
+27            android:name="ru.skillbranch.skillarticles.ui.RootActivity"
+27-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:17:13-44
+28            android:windowSoftInputMode="adjustNothing" >
+28-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:18:13-56
+29            <intent-filter>
+29-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:19:13-23:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:20:17-69
+30-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:20:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:22:17-77
+32-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:22:27-74
+33            </intent-filter>
+34        </activity>
+35
+36        <service
+36-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+37            android:name="androidx.room.MultiInstanceInvalidationService"
+37-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+38            android:directBootAware="true"
+38-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+39            android:exported="false" />
+39-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/2df69e043d04b570e55ab0d36ec7cf35/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+40    </application>
+41
+42</manifest>

@@ -374,7 +374,7 @@ public final class AppDb_Impl extends AppDb {
   }
 
   @Override
-  public ArticlePersonalInfosDao articlePersonalInfosDao() {
+  public ArticlePersonalInfosDao articlePersonalInfos() {
     if (_articlePersonalInfosDao != null) {
       return _articlePersonalInfosDao;
     } else {
