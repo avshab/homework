@@ -2,6 +2,7 @@ package ru.skillbranch.skillarticles.data.local.dao;
 
 import android.database.Cursor;
 import androidx.lifecycle.LiveData;
+import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -11,12 +12,15 @@ import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Exception;
 import java.lang.Long;
+import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
 import ru.skillbranch.skillarticles.data.local.entities.ArticleTagXRef;
 import ru.skillbranch.skillarticles.data.local.entities.Tag;
 
@@ -121,98 +125,131 @@ public final class TagsDao_Impl implements TagsDao {
   }
 
   @Override
-  public List<Long> insert(final List<? extends Tag> list) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      List<Long> _result = __insertionAdapterOfTag.insertAndReturnIdsList(list);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insert(final List<? extends Tag> list, final Continuation<? super List<Long>> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<List<Long>>() {
+      @Override
+      public List<Long> call() throws Exception {
+        __db.beginTransaction();
+        try {
+          List<Long> _result = __insertionAdapterOfTag.insertAndReturnIdsList(list);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public long insert(final Tag obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      long _result = __insertionAdapterOfTag.insertAndReturnId(obj);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insert(final Tag obj, final Continuation<? super Long> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
+      @Override
+      public Long call() throws Exception {
+        __db.beginTransaction();
+        try {
+          long _result = __insertionAdapterOfTag.insertAndReturnId(obj);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public List<Long> insertRefs(final List<ArticleTagXRef> refs) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      List<Long> _result = __insertionAdapterOfArticleTagXRef.insertAndReturnIdsList(refs);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insertRefs(final List<ArticleTagXRef> refs,
+      final Continuation<? super List<Long>> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<List<Long>>() {
+      @Override
+      public List<Long> call() throws Exception {
+        __db.beginTransaction();
+        try {
+          List<Long> _result = __insertionAdapterOfArticleTagXRef.insertAndReturnIdsList(refs);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void delete(final Tag obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __deletionAdapterOfTag.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object delete(final Tag obj, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __deletionAdapterOfTag.handle(obj);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void update(final List<? extends Tag> list) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfTag.handleMultiple(list);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object update(final List<? extends Tag> list, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfTag.handleMultiple(list);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void update(final Tag obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfTag.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object update(final Tag obj, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfTag.handle(obj);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void incrementTagUseCount(final String tag) {
-    __db.assertNotSuspendingTransaction();
-    final SupportSQLiteStatement _stmt = __preparedStmtOfIncrementTagUseCount.acquire();
-    int _argIndex = 1;
-    if (tag == null) {
-      _stmt.bindNull(_argIndex);
-    } else {
-      _stmt.bindString(_argIndex, tag);
-    }
-    __db.beginTransaction();
-    try {
-      _stmt.executeUpdateDelete();
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-      __preparedStmtOfIncrementTagUseCount.release(_stmt);
-    }
+  public Object incrementTagUseCount(final String tag, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfIncrementTagUseCount.acquire();
+        int _argIndex = 1;
+        if (tag == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindString(_argIndex, tag);
+        }
+        __db.beginTransaction();
+        try {
+          _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfIncrementTagUseCount.release(_stmt);
+        }
+      }
+    }, p1);
   }
 
   @Override

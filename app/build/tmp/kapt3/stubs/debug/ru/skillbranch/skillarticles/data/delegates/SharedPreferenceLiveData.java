@@ -19,6 +19,7 @@ public final class SharedPreferenceLiveData<T extends java.lang.Object> extends 
     protected void onInactive() {
     }
     
+    @kotlin.Suppress(names = {"UNCHECKED_CAST"})
     private final T readValue(T defaultValue) {
         return null;
     }

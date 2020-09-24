@@ -2,16 +2,21 @@ package ru.skillbranch.skillarticles.data.local.dao;
 
 import android.database.Cursor;
 import androidx.lifecycle.LiveData;
+import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
+import androidx.room.RoomDatabaseKt;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import java.lang.Boolean;
 import java.lang.Exception;
+import java.lang.Integer;
 import java.lang.Long;
+import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
@@ -19,6 +24,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function1;
 import ru.skillbranch.skillarticles.data.local.DateConverter;
 import ru.skillbranch.skillarticles.data.local.entities.ArticlePersonalInfo;
 
@@ -131,140 +139,249 @@ public final class ArticlePersonalInfosDao_Impl implements ArticlePersonalInfosD
   }
 
   @Override
-  public List<Long> insert(final List<? extends ArticlePersonalInfo> list) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      List<Long> _result = __insertionAdapterOfArticlePersonalInfo.insertAndReturnIdsList(list);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insert(final List<? extends ArticlePersonalInfo> list,
+      final Continuation<? super List<Long>> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<List<Long>>() {
+      @Override
+      public List<Long> call() throws Exception {
+        __db.beginTransaction();
+        try {
+          List<Long> _result = __insertionAdapterOfArticlePersonalInfo.insertAndReturnIdsList(list);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public long insert(final ArticlePersonalInfo obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      long _result = __insertionAdapterOfArticlePersonalInfo.insertAndReturnId(obj);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insert(final ArticlePersonalInfo obj, final Continuation<? super Long> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
+      @Override
+      public Long call() throws Exception {
+        __db.beginTransaction();
+        try {
+          long _result = __insertionAdapterOfArticlePersonalInfo.insertAndReturnId(obj);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void delete(final ArticlePersonalInfo obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __deletionAdapterOfArticlePersonalInfo.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object delete(final ArticlePersonalInfo obj, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __deletionAdapterOfArticlePersonalInfo.handle(obj);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void update(final List<? extends ArticlePersonalInfo> list) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfArticlePersonalInfo.handleMultiple(list);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object update(final List<? extends ArticlePersonalInfo> list,
+      final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfArticlePersonalInfo.handleMultiple(list);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void update(final ArticlePersonalInfo obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfArticlePersonalInfo.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object update(final ArticlePersonalInfo obj, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfArticlePersonalInfo.handle(obj);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void upsert(final List<ArticlePersonalInfo> list) {
-    __db.beginTransaction();
-    try {
-      ArticlePersonalInfosDao.DefaultImpls.upsert(ArticlePersonalInfosDao_Impl.this, list);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object upsert(final List<ArticlePersonalInfo> list, final Continuation<? super Unit> p1) {
+    return RoomDatabaseKt.withTransaction(__db, new Function1<Continuation<? super Unit>, Object>() {
+      @Override
+      public Object invoke(Continuation<? super Unit> __cont) {
+        return ArticlePersonalInfosDao.DefaultImpls.upsert(ArticlePersonalInfosDao_Impl.this, list, __cont);
+      }
+    }, p1);
   }
 
   @Override
-  public void toggleBookmarkOrInsert(final String articleId) {
-    __db.beginTransaction();
-    try {
-      ArticlePersonalInfosDao.DefaultImpls.toggleBookmarkOrInsert(ArticlePersonalInfosDao_Impl.this, articleId);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object toggleBookmarkOrInsert(final String articleId,
+      final Continuation<? super Boolean> p1) {
+    return RoomDatabaseKt.withTransaction(__db, new Function1<Continuation<? super Boolean>, Object>() {
+      @Override
+      public Object invoke(Continuation<? super Boolean> __cont) {
+        return ArticlePersonalInfosDao.DefaultImpls.toggleBookmarkOrInsert(ArticlePersonalInfosDao_Impl.this, articleId, __cont);
+      }
+    }, p1);
   }
 
   @Override
-  public void toggleLikeOrInsert(final String articleId) {
-    __db.beginTransaction();
-    try {
-      ArticlePersonalInfosDao.DefaultImpls.toggleLikeOrInsert(ArticlePersonalInfosDao_Impl.this, articleId);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object toggleLikeOrInsert(final String articleId, final Continuation<? super Boolean> p1) {
+    return RoomDatabaseKt.withTransaction(__db, new Function1<Continuation<? super Boolean>, Object>() {
+      @Override
+      public Object invoke(Continuation<? super Boolean> __cont) {
+        return ArticlePersonalInfosDao.DefaultImpls.toggleLikeOrInsert(ArticlePersonalInfosDao_Impl.this, articleId, __cont);
+      }
+    }, p1);
   }
 
   @Override
-  public int toggleLike(final String articleId) {
-    __db.assertNotSuspendingTransaction();
-    final SupportSQLiteStatement _stmt = __preparedStmtOfToggleLike.acquire();
+  public Object toggleLike(final String articleId, final Continuation<? super Integer> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Integer>() {
+      @Override
+      public Integer call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfToggleLike.acquire();
+        int _argIndex = 1;
+        if (articleId == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindString(_argIndex, articleId);
+        }
+        __db.beginTransaction();
+        try {
+          final java.lang.Integer _result = _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfToggleLike.release(_stmt);
+        }
+      }
+    }, p1);
+  }
+
+  @Override
+  public Object toggleBookmark(final String articleId, final Continuation<? super Integer> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Integer>() {
+      @Override
+      public Integer call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfToggleBookmark.acquire();
+        int _argIndex = 1;
+        if (articleId == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindString(_argIndex, articleId);
+        }
+        __db.beginTransaction();
+        try {
+          final java.lang.Integer _result = _stmt.executeUpdateDelete();
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+          __preparedStmtOfToggleBookmark.release(_stmt);
+        }
+      }
+    }, p1);
+  }
+
+  @Override
+  public Object isBookmarked(final String articleId, final Continuation<? super Boolean> p1) {
+    final String _sql = "\n"
+            + "        SELECT is_bookmark FROM article_personal_infos\n"
+            + "        WHERE article_id = ?\n"
+            + "    ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (articleId == null) {
-      _stmt.bindNull(_argIndex);
+      _statement.bindNull(_argIndex);
     } else {
-      _stmt.bindString(_argIndex, articleId);
+      _statement.bindString(_argIndex, articleId);
     }
-    __db.beginTransaction();
-    try {
-      final int _result = _stmt.executeUpdateDelete();
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-      __preparedStmtOfToggleLike.release(_stmt);
-    }
+    return CoroutinesRoom.execute(__db, false, new Callable<Boolean>() {
+      @Override
+      public Boolean call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Boolean _result;
+          if(_cursor.moveToFirst()) {
+            final Integer _tmp;
+            if (_cursor.isNull(0)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getInt(0);
+            }
+            _result = _tmp == null ? null : _tmp != 0;
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public int toggleBookmark(final String articleId) {
-    __db.assertNotSuspendingTransaction();
-    final SupportSQLiteStatement _stmt = __preparedStmtOfToggleBookmark.acquire();
+  public Object isLiked(final String articleId, final Continuation<? super Boolean> p1) {
+    final String _sql = "\n"
+            + "        SELECT is_like FROM article_personal_infos\n"
+            + "        WHERE article_id = ?\n"
+            + "    ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (articleId == null) {
-      _stmt.bindNull(_argIndex);
+      _statement.bindNull(_argIndex);
     } else {
-      _stmt.bindString(_argIndex, articleId);
+      _statement.bindString(_argIndex, articleId);
     }
-    __db.beginTransaction();
-    try {
-      final int _result = _stmt.executeUpdateDelete();
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-      __preparedStmtOfToggleBookmark.release(_stmt);
-    }
+    return CoroutinesRoom.execute(__db, false, new Callable<Boolean>() {
+      @Override
+      public Boolean call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Boolean _result;
+          if(_cursor.moveToFirst()) {
+            final Integer _tmp;
+            if (_cursor.isNull(0)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getInt(0);
+            }
+            _result = _tmp == null ? null : _tmp != 0;
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, p1);
   }
 
   @Override
@@ -368,5 +485,57 @@ public final class ArticlePersonalInfosDao_Impl implements ArticlePersonalInfosD
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public Object findPersonalInfosTest(final String articleId,
+      final Continuation<? super ArticlePersonalInfo> p1) {
+    final String _sql = "\n"
+            + "        SELECT * FROM article_personal_infos\n"
+            + "        WHERE article_id = ?\n"
+            + "    ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (articleId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, articleId);
+    }
+    return CoroutinesRoom.execute(__db, false, new Callable<ArticlePersonalInfo>() {
+      @Override
+      public ArticlePersonalInfo call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfArticleId = CursorUtil.getColumnIndexOrThrow(_cursor, "article_id");
+          final int _cursorIndexOfIsLike = CursorUtil.getColumnIndexOrThrow(_cursor, "is_like");
+          final int _cursorIndexOfIsBookmark = CursorUtil.getColumnIndexOrThrow(_cursor, "is_bookmark");
+          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
+          final ArticlePersonalInfo _result;
+          if(_cursor.moveToFirst()) {
+            final String _tmpArticleId;
+            _tmpArticleId = _cursor.getString(_cursorIndexOfArticleId);
+            final boolean _tmpIsLike;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsLike);
+            _tmpIsLike = _tmp != 0;
+            final boolean _tmpIsBookmark;
+            final int _tmp_1;
+            _tmp_1 = _cursor.getInt(_cursorIndexOfIsBookmark);
+            _tmpIsBookmark = _tmp_1 != 0;
+            final Date _tmpUpdatedAt;
+            final long _tmp_2;
+            _tmp_2 = _cursor.getLong(_cursorIndexOfUpdatedAt);
+            _tmpUpdatedAt = __dateConverter.timestampToDate(_tmp_2);
+            _result = new ArticlePersonalInfo(_tmpArticleId,_tmpIsLike,_tmpIsBookmark,_tmpUpdatedAt);
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, p1);
   }
 }

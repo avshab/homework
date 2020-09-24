@@ -4,9 +4,11 @@ import android.database.Cursor;
 import androidx.lifecycle.LiveData;
 import androidx.paging.DataSource;
 import androidx.paging.DataSource.Factory;
+import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
+import androidx.room.RoomDatabaseKt;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.paging.LimitOffsetDataSource;
 import androidx.room.util.CursorUtil;
@@ -17,6 +19,7 @@ import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Exception;
 import java.lang.Integer;
 import java.lang.Long;
+import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.StringBuilder;
@@ -25,6 +28,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Callable;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.jvm.functions.Function1;
 import ru.skillbranch.skillarticles.data.local.DateConverter;
 import ru.skillbranch.skillarticles.data.local.ListConverter;
 import ru.skillbranch.skillarticles.data.local.MarkdownConverter;
@@ -202,76 +208,99 @@ public final class ArticlesDao_Impl implements ArticlesDao {
   }
 
   @Override
-  public List<Long> insert(final List<? extends Article> list) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      List<Long> _result = __insertionAdapterOfArticle.insertAndReturnIdsList(list);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insert(final List<? extends Article> list,
+      final Continuation<? super List<Long>> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<List<Long>>() {
+      @Override
+      public List<Long> call() throws Exception {
+        __db.beginTransaction();
+        try {
+          List<Long> _result = __insertionAdapterOfArticle.insertAndReturnIdsList(list);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public long insert(final Article obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      long _result = __insertionAdapterOfArticle.insertAndReturnId(obj);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insert(final Article obj, final Continuation<? super Long> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Long>() {
+      @Override
+      public Long call() throws Exception {
+        __db.beginTransaction();
+        try {
+          long _result = __insertionAdapterOfArticle.insertAndReturnId(obj);
+          __db.setTransactionSuccessful();
+          return _result;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void delete(final Article obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __deletionAdapterOfArticle.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object delete(final Article obj, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __deletionAdapterOfArticle.handle(obj);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void update(final List<? extends Article> list) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfArticle.handleMultiple(list);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object update(final List<? extends Article> list, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfArticle.handleMultiple(list);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void update(final Article obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfArticle.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object update(final Article obj, final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfArticle.handle(obj);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
-  public void upsert(final List<Article> list) {
-    __db.beginTransaction();
-    try {
-      ArticlesDao.DefaultImpls.upsert(ArticlesDao_Impl.this, list);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object upsert(final List<Article> list, final Continuation<? super Unit> p1) {
+    return RoomDatabaseKt.withTransaction(__db, new Function1<Continuation<? super Unit>, Object>() {
+      @Override
+      public Object invoke(Continuation<? super Unit> __cont) {
+        return ArticlesDao.DefaultImpls.upsert(ArticlesDao_Impl.this, list, __cont);
+      }
+    }, p1);
   }
 
   @Override
@@ -342,6 +371,72 @@ public final class ArticlesDao_Impl implements ArticlesDao {
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public Object findArticlesTest(final Continuation<? super List<Article>> p0) {
+    final String _sql = "\n"
+            + "        SELECT * FROM articles\n"
+            + "    ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return CoroutinesRoom.execute(__db, false, new Callable<List<Article>>() {
+      @Override
+      public List<Article> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfCategoryId = CursorUtil.getColumnIndexOrThrow(_cursor, "category_id");
+          final int _cursorIndexOfPoster = CursorUtil.getColumnIndexOrThrow(_cursor, "poster");
+          final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
+          final int _cursorIndexOfUpdatedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "updated_at");
+          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "author_user_id");
+          final int _cursorIndexOfAvatar = CursorUtil.getColumnIndexOrThrow(_cursor, "author_avatar");
+          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "author_name");
+          final List<Article> _result = new ArrayList<Article>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final Article _item;
+            final String _tmpId;
+            _tmpId = _cursor.getString(_cursorIndexOfId);
+            final String _tmpTitle;
+            _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+            final String _tmpDescription;
+            _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+            final String _tmpCategoryId;
+            _tmpCategoryId = _cursor.getString(_cursorIndexOfCategoryId);
+            final String _tmpPoster;
+            _tmpPoster = _cursor.getString(_cursorIndexOfPoster);
+            final Date _tmpDate;
+            final long _tmp;
+            _tmp = _cursor.getLong(_cursorIndexOfDate);
+            _tmpDate = __dateConverter.timestampToDate(_tmp);
+            final Date _tmpUpdatedAt;
+            final long _tmp_1;
+            _tmp_1 = _cursor.getLong(_cursorIndexOfUpdatedAt);
+            _tmpUpdatedAt = __dateConverter.timestampToDate(_tmp_1);
+            final Author _tmpAuthor;
+            if (! (_cursor.isNull(_cursorIndexOfUserId) && _cursor.isNull(_cursorIndexOfAvatar) && _cursor.isNull(_cursorIndexOfName))) {
+              final String _tmpUserId;
+              _tmpUserId = _cursor.getString(_cursorIndexOfUserId);
+              final String _tmpAvatar;
+              _tmpAvatar = _cursor.getString(_cursorIndexOfAvatar);
+              final String _tmpName;
+              _tmpName = _cursor.getString(_cursorIndexOfName);
+              _tmpAuthor = new Author(_tmpUserId,_tmpAvatar,_tmpName);
+            }  else  {
+              _tmpAuthor = null;
+            }
+            _item = new Article(_tmpId,_tmpTitle,_tmpDescription,_tmpAuthor,_tmpCategoryId,_tmpPoster,_tmpDate,_tmpUpdatedAt);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, p0);
   }
 
   @Override
@@ -782,6 +877,32 @@ public final class ArticlesDao_Impl implements ArticlesDao {
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public Object findLastArticleId(final Continuation<? super String> p0) {
+    final String _sql = "\n"
+            + "        SELECT id FROM articles ORDER BY date DESC LIMIT 1\n"
+            + "    ";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    return CoroutinesRoom.execute(__db, false, new Callable<String>() {
+      @Override
+      public String call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final String _result;
+          if(_cursor.moveToFirst()) {
+            _result = _cursor.getString(0);
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, p0);
   }
 
   @Override

@@ -4,7 +4,7 @@
             "outputFile": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/ashab/.gradle/caches/transforms-2/files-2.1/ad2fd1cfd4d3a473594cbf5b3571b75b/preference-1.1.1/res/values-sw360dp-v13/values-sw360dp-v13.xml",
+                    "source": "/Users/ashab/.gradle/caches/transforms-2/files-2.1/75a4860205272daa8776129b4b16e404/preference-1.1.1/res/values-sw360dp-v13/values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
