@@ -24,12 +24,12 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_share_black_24dp.xml"
     },
     {
-        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_bookmark_black_24dp.xml.flat",
-        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_bookmark_black_24dp.xml"
-    },
-    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_bookmark_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_bookmark_black_24dp.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_avatar.png.flat",
@@ -38,6 +38,10 @@
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_avatar.png.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_avatar.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_photo_library_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_photo_library_black_24dp.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_link_black_24dp.xml.flat",
@@ -64,12 +68,12 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/activity_root.xml"
     },
     {
-        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_privacy_policy.xml.flat",
-        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_privacy_policy.xml"
-    },
-    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_avatar.png.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_avatar.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_privacy_policy.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_privacy_policy.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -80,12 +84,12 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_search_black_24dp.xml"
     },
     {
-        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_logo_full.xml.flat",
-        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_logo_full.xml"
-    },
-    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_logo_full.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_logo_full.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_articles.xml.flat",
@@ -116,6 +120,10 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_bookmark_border_black_24dp.xml"
     },
     {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_delete_forever_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_delete_forever_black_24dp.xml"
+    },
+    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_reply_black_24dp.xml.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_reply_black_24dp.xml"
     },
@@ -136,6 +144,10 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/menu/bottom_nav_menu.xml"
     },
     {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_crop_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_crop_black_24dp.xml"
+    },
+    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
@@ -144,16 +156,24 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_camera_black_24dp.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_camera_black_24dp.xml"
+    },
+    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/navigation_mobile_navigation.xml.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/xml/network_security_config.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_avatar.png.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_avatar.png"
     },
     {
-        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
-        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/xml/network_security_config.xml"
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_fragment_registration.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/fragment_registration.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_android_black_24dp.xml.flat",
@@ -236,6 +256,10 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_translate_black_24dp.xml"
     },
     {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/xml_provider_paths.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/xml/provider_paths.xml"
+    },
+    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-night_ic_logo_full.xml.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable-night/ic_logo_full.xml"
     },
@@ -248,12 +272,12 @@
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/color_tint_color.xml.flat",
-        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/color/tint_color.xml"
-    },
-    {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_avatar.xml.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_avatar.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/color_tint_color.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/color/tint_color.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_bookmark_states.xml.flat",
@@ -274,6 +298,10 @@
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_insert_comment_black_24dp.xml.flat",
         "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/drawable/ic_insert_comment_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/layout_bottom_sheet.xml.flat",
+        "source": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/res/layout/bottom_sheet.xml"
     },
     {
         "merged": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/res/merged/debug/drawable_ic_brightness_medium_black_24dp.xml.flat",

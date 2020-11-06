@@ -4,7 +4,7 @@
             "outputFile": "/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/ashab/.gradle/caches/transforms-2/files-2.1/b79560870d03cb783592ba0e540bae35/appcompat-1.1.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/ashab/.gradle/caches/transforms-2/files-2.1/7c122e74a8c3b767f724edd8d24a3778/appcompat-1.2.0/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

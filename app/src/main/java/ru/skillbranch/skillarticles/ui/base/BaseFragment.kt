@@ -2,6 +2,7 @@ package ru.skillbranch.skillarticles.ui.base
 
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_root.*
 import ru.skillbranch.skillarticles.ui.RootActivity
@@ -20,6 +21,9 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
     open val prepareToolbar: (ToolbarBuilder.() -> Unit)? = null
     open val prepareBottombar: (BottombarBuilder.() -> Unit)? = null
 
+    @VisibleForTesting(otherwise = VisibleForTesting.NONE)
+    var _mockRoot: RootActivity? = null
+
     val toolbar
         get() = root.toolbar
 
@@ -36,17 +40,6 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //prepare toolbar
-        root.toolbarBuilder
-            .invalidate()
-            .prepare(prepareToolbar)
-            .build(root)
-
-        root.bottombarBuilder
-            .invalidate()
-            .prepare(prepareBottombar)
-            .build(root)
-
         //restore state
         viewModel.restoreState()
         binding?.restoreUi(savedInstanceState)
@@ -60,11 +53,21 @@ abstract class BaseFragment<T : BaseViewModel<out IViewModelState>> : Fragment()
         viewModel.observeNavigation(viewLifecycleOwner) { root.viewModel.navigate(it) }
         viewModel.observeLoading(viewLifecycleOwner){renderLoading(it)}
 
-        setupViews()
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
+        //prepare toolbar
+        root.toolbarBuilder
+            .invalidate()
+            .prepare(prepareToolbar)
+            .build(root)
+
+        root.bottombarBuilder
+            .invalidate()
+            .prepare(prepareBottombar)
+            .build(root)
+        setupViews()
         binding?.rebind()
     }
 

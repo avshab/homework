@@ -16,56 +16,142 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:6:5-67
 12-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:6:22-64
-13
-14    <application
-14-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:8:5-26:19
-15        android:name="ru.skillbranch.skillarticles.App"
-15-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:9:9-28
-16        android:allowBackup="true"
-16-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:10:9-35
-17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-17-->[androidx.core:core:1.3.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/43e5c304e0742fd353c56ae965537db1/core-1.3.0/AndroidManifest.xml:24:18-86
-18        android:debuggable="true"
-19        android:extractNativeLibs="false"
-20        android:icon="@mipmap/ic_launcher"
-20-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:11:9-43
-21        android:label="@string/app_name"
-21-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:12:9-41
-22        android:networkSecurityConfig="@xml/network_security_config"
-22-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:16:9-69
-23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:13:9-54
-24        android:supportsRtl="true"
-24-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:14:9-35
-25        android:testOnly="true"
-26        android:theme="@style/AppTheme" >
-26-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:15:9-40
-27        <activity
-27-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:17:9-25:20
-28            android:name="ru.skillbranch.skillarticles.ui.RootActivity"
-28-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:18:13-44
-29            android:windowSoftInputMode="adjustNothing" >
-29-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:19:13-56
-30            <intent-filter>
-30-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:20:13-24:29
-31                <action android:name="android.intent.action.MAIN" />
-31-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:21:17-69
-31-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:21:25-66
-32
-33                <category android:name="android.intent.category.LAUNCHER" />
-33-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:17-77
-33-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:27-74
-34            </intent-filter>
-35        </activity>
-36
-37        <service
-37-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/398f0fe7415f93edf0ebea1cf5063137/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
-38            android:name="androidx.room.MultiInstanceInvalidationService"
-38-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/398f0fe7415f93edf0ebea1cf5063137/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
-39            android:directBootAware="true"
-39-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/398f0fe7415f93edf0ebea1cf5063137/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
-40            android:exported="false" />
-40-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/398f0fe7415f93edf0ebea1cf5063137/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
-41    </application>
-42
-43</manifest>
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:7:5-80
+13-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:7:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:8:5-81
+14-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:8:22-78
+15    <uses-permission android:name="android.permission.REORDER_TASKS" />
+15-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:25:5-72
+15-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:25:22-69
+16
+17    <application
+17-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:10:5-38:19
+18        android:name="ru.skillbranch.skillarticles.App"
+18-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:11:9-28
+19        android:allowBackup="true"
+19-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:12:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.3.1] /Users/ashab/.gradle/caches/transforms-2/files-2.1/10f15b2dc0989cb04fe5470962fe0fb5/core-1.3.1/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:icon="@mipmap/ic_launcher"
+23-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:13:9-43
+24        android:label="@string/app_name"
+24-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:14:9-41
+25        android:networkSecurityConfig="@xml/network_security_config"
+25-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:18:9-69
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:15:9-54
+27        android:supportsRtl="true"
+27-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:16:9-35
+28        android:testOnly="true"
+29        android:theme="@style/AppTheme" >
+29-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:17:9-40
+30        <activity
+30-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:19:9-27:20
+31            android:name="ru.skillbranch.skillarticles.ui.RootActivity"
+31-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:20:13-44
+32            android:windowSoftInputMode="adjustNothing" >
+32-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:21:13-56
+33            <intent-filter>
+33-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:22:13-26:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:17-69
+34-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:25:17-77
+36-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:25:27-74
+37            </intent-filter>
+38        </activity>
+39
+40        <provider
+41            android:name="ru.skillbranch.skillarticles.data.providers.ImageFileProvider"
+41-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:30:13-61
+42            android:authorities="ru.skillbranch.skillarticles.provider"
+42-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:31:13-60
+43            android:exported="false"
+43-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:32:13-37
+44            android:grantUriPermissions="true" >
+44-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:33:13-47
+45            <meta-data
+45-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:34:13-36:58
+46                android:name="android.support.FILE_PROVIDER_PATHS"
+46-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:35:17-67
+47                android:resource="@xml/provider_paths" />
+47-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:36:17-55
+48        </provider>
+49
+50        <activity
+50-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:28:9-37:20
+51            android:name="androidx.fragment.app.testing.FragmentScenario$EmptyFragmentActivity"
+51-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:29:13-96
+52            android:exported="true"
+52-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:30:13-36
+53            android:multiprocess="true"
+53-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:31:13-40
+54            android:taskAffinity=""
+54-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:32:13-36
+55            android:theme="@style/FragmentScenarioEmptyFragmentActivityTheme" >
+55-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:33:13-78
+56            <intent-filter>
+56-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:34:13-36:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:17-69
+57-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:25-66
+58            </intent-filter>
+59        </activity>
+60
+61        <service
+61-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/9bc96e7d701f2d9896e5783d1f4fb3b6/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+62            android:name="androidx.room.MultiInstanceInvalidationService"
+62-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/9bc96e7d701f2d9896e5783d1f4fb3b6/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+63            android:directBootAware="true"
+63-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/9bc96e7d701f2d9896e5783d1f4fb3b6/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+64            android:exported="false" />
+64-->[androidx.room:room-runtime:2.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/9bc96e7d701f2d9896e5783d1f4fb3b6/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+65
+66        <activity
+66-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:27:9-33:20
+67            android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity"
+67-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:28:13-99
+68            android:theme="@android:style/Theme" >
+68-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:29:13-49
+69            <intent-filter>
+69-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:34:13-36:29
+70                <action android:name="android.intent.action.MAIN" />
+70-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:17-69
+70-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:25-66
+71            </intent-filter>
+72        </activity>
+73        <activity
+73-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:34:9-40:20
+74            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity"
+74-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:35:13-95
+75            android:theme="@android:style/Theme" >
+75-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:36:13-49
+76            <intent-filter>
+76-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:34:13-36:29
+77                <action android:name="android.intent.action.MAIN" />
+77-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:17-69
+77-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:25-66
+78            </intent-filter>
+79        </activity>
+80        <activity
+80-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:41:9-47:20
+81            android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity"
+81-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:42:13-103
+82            android:theme="@android:style/Theme.Dialog" >
+82-->[androidx.test:core:1.2.0] /Users/ashab/.gradle/caches/transforms-2/files-2.1/b2a8c626ab5980a3a1071a295ef0a70d/jetified-core-1.2.0/AndroidManifest.xml:43:13-56
+83            <intent-filter>
+83-->[androidx.fragment:fragment-testing:1.2.5] /Users/ashab/.gradle/caches/transforms-2/files-2.1/6196e99c73c23d5e410e7288b73d6a12/jetified-fragment-testing-1.2.5/AndroidManifest.xml:34:13-36:29
+84                <action android:name="android.intent.action.MAIN" />
+84-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:17-69
+84-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/src/main/AndroidManifest.xml:23:25-66
+85            </intent-filter>
+86        </activity>
+87    </application>
+88
+89</manifest>
