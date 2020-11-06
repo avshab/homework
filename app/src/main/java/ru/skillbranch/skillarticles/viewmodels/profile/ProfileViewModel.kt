@@ -21,14 +21,12 @@ import ru.skillbranch.skillarticles.data.repositories.ProfileRepository
 import ru.skillbranch.skillarticles.viewmodels.base.*
 import java.io.InputStream
 
-
 class ProfileViewModel(handle: SavedStateHandle) :
     BaseViewModel<ProfileState>(handle, ProfileState()) {
+
     private val repository = ProfileRepository
     private val activityResults = MutableLiveData<Event<PendingAction>>()
-
-
-    private val storagePermissions = listOf(
+    private val storagePermissions = listOf<String>(
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.READ_EXTERNAL_STORAGE
     )
@@ -43,6 +41,7 @@ class ProfileViewModel(handle: SavedStateHandle) :
                 respect = profile.respect,
                 about = profile.about
             )
+
         }
     }
 
@@ -51,14 +50,23 @@ class ProfileViewModel(handle: SavedStateHandle) :
         activityResults.value = Event(action)
     }
 
+    fun handleTestAction(source: Uri, destination: Uri) {
+        val pendingAction = PendingAction.EditAction(source to destination)
+        updateState { it.copy(pendingAction = pendingAction) }
+        requestPermissions(storagePermissions)
+    }
+
     fun handlePermission(permissionsResult: Map<String, Pair<Boolean, Boolean>>) {
 
-        val isAllGranted = !permissionsResult.values.map { it.first }.contains(false)
+        val isAllGrantad = !permissionsResult.values.map { it.first }.contains(false)
         val isAllMayBeShown = !permissionsResult.values.map { it.second }.contains(false)
 
         when {
-            isAllGranted -> executePendingAction()
+            //if all permissions granted execute action
+            isAllGrantad -> executePendingAction()
+            //if request permission not may be shown(dont ask again check) show app settings for manual permission
             !isAllMayBeShown -> executeOpenSettings()
+            //else retry request permission
             else -> {
                 val msg = Notify.ErrorMessage(
                     "Need permissions for storage",
@@ -67,11 +75,10 @@ class ProfileViewModel(handle: SavedStateHandle) :
                 )
                 notify(msg)
             }
-
         }
-
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun executeOpenSettings() {
         val errHandler = {
             val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
@@ -79,9 +86,16 @@ class ProfileViewModel(handle: SavedStateHandle) :
             }
             startForResult(PendingAction.SettingsAction(intent))
         }
-        notify(Notify.ErrorMessage("Need permissions for storage", "Open settings", errHandler))
+        notify(
+            Notify.ErrorMessage(
+                "Need permissions for storage",
+                "Open settings",
+                errHandler
+            )
+        )
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun executePendingAction() {
         val pendingAction = currentState.pendingAction ?: return
         startForResult(pendingAction)
@@ -90,8 +104,8 @@ class ProfileViewModel(handle: SavedStateHandle) :
     fun handleUploadPhoto(inputStream: InputStream?) {
         inputStream ?: return //or show error notification
 
-        launchSafety(null, {updateState { it.copy(pendingAction = null) }}) {
-            //read file stream on background thread (IO)
+        launchSafety(null, { updateState { it.copy(pendingAction = null) } }) {
+            //read file stream on background thread(IO)
             val byteArray =
                 withContext(Dispatchers.IO) { inputStream.use { input -> input.readBytes() } }
 
@@ -102,6 +116,7 @@ class ProfileViewModel(handle: SavedStateHandle) :
         }
     }
 
+
     fun observeActivityResults(owner: LifecycleOwner, handle: (action: PendingAction) -> Unit) {
         activityResults.observe(owner, EventObserver { handle(it) })
     }
@@ -111,8 +126,9 @@ class ProfileViewModel(handle: SavedStateHandle) :
         requestPermissions(storagePermissions)
     }
 
-    fun handleDeleteAction() {
-        //TODO remove avatar on server
+    fun handleCameraAction(destination: Uri) {
+        updateState { it.copy(pendingAction = PendingAction.CameraAction(destination)) }
+        requestPermissions(storagePermissions)
     }
 
     fun handleGalleryAction() {
@@ -120,9 +136,17 @@ class ProfileViewModel(handle: SavedStateHandle) :
         requestPermissions(storagePermissions)
     }
 
-    fun handleCameraAction(destination: Uri) {
-        updateState { it.copy(pendingAction = PendingAction.CameraAction(destination)) }
-        requestPermissions(storagePermissions)
+    fun handleDeleteAction() {
+        //remove avatar from server
+        launchSafety {
+            repository.removeAvatar()
+        }
+    }
+
+    fun handleEditProfile(name: String, about: String) {
+        launchSafety {
+            repository.editProfile(name, about)
+        }
     }
 }
 
@@ -144,7 +168,7 @@ data class ProfileState(
 }
 
 sealed class PendingAction() : Parcelable {
-    abstract val payload: Any?
+    abstract val payload: Any? //нагрузка
 
     @Parcelize
     data class GalleryAction(override val payload: String) : PendingAction()
@@ -176,6 +200,5 @@ sealed class PendingAction() : Parcelable {
                 return arrayOfNulls(size)
             }
         }
-
     }
 }

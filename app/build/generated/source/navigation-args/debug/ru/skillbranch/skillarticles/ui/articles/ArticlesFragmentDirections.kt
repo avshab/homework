@@ -16,14 +16,14 @@ import ru.skillbranch.skillarticles.data.local.entities.CategoryData
 
 class ArticlesFragmentDirections private constructor() {
   private data class ActionToPageArticle(
-    val articleId: String = "-1",
+    val articleId: String,
     val author: String,
     val authorAvatar: String,
+    val date: Date,
     val category: String,
     val categoryIcon: String,
     val poster: String,
-    val title: String,
-    val date: Date
+    val title: String
   ) : NavDirections {
     override fun getActionId(): Int = R.id.action_to_page_article
 
@@ -33,10 +33,6 @@ class ArticlesFragmentDirections private constructor() {
       result.putString("article_id", this.articleId)
       result.putString("author", this.author)
       result.putString("author_avatar", this.authorAvatar)
-      result.putString("category", this.category)
-      result.putString("category_icon", this.categoryIcon)
-      result.putString("poster", this.poster)
-      result.putString("title", this.title)
       if (Parcelable::class.java.isAssignableFrom(Date::class.java)) {
         result.putParcelable("date", this.date as Parcelable)
       } else if (Serializable::class.java.isAssignableFrom(Date::class.java)) {
@@ -45,6 +41,10 @@ class ArticlesFragmentDirections private constructor() {
         throw UnsupportedOperationException(Date::class.java.name +
             " must implement Parcelable or Serializable or must be an Enum.")
       }
+      result.putString("category", this.category)
+      result.putString("category_icon", this.categoryIcon)
+      result.putString("poster", this.poster)
+      result.putString("title", this.title)
       return result
     }
   }
@@ -65,16 +65,16 @@ class ArticlesFragmentDirections private constructor() {
 
   companion object {
     fun actionToPageArticle(
-      articleId: String = "-1",
+      articleId: String,
       author: String,
       authorAvatar: String,
+      date: Date,
       category: String,
       categoryIcon: String,
       poster: String,
-      title: String,
-      date: Date
-    ): NavDirections = ActionToPageArticle(articleId, author, authorAvatar, category, categoryIcon,
-        poster, title, date)
+      title: String
+    ): NavDirections = ActionToPageArticle(articleId, author, authorAvatar, date, category,
+        categoryIcon, poster, title)
 
     fun choseCategory(selectedCategories: Array<String>, categories: Array<CategoryData>):
         NavDirections = ChoseCategory(selectedCategories, categories)

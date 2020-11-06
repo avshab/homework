@@ -12,14 +12,14 @@ import kotlin.Suppress
 import kotlin.jvm.JvmStatic
 
 data class ArticleFragmentArgs(
-  val articleId: String = "-1",
+  val articleId: String,
   val author: String,
   val authorAvatar: String,
+  val date: Date,
   val category: String,
   val categoryIcon: String,
   val poster: String,
-  val title: String,
-  val date: Date
+  val title: String
 ) : NavArgs {
   @Suppress("CAST_NEVER_SUCCEEDS")
   fun toBundle(): Bundle {
@@ -27,10 +27,6 @@ data class ArticleFragmentArgs(
     result.putString("article_id", this.articleId)
     result.putString("author", this.author)
     result.putString("author_avatar", this.authorAvatar)
-    result.putString("category", this.category)
-    result.putString("category_icon", this.categoryIcon)
-    result.putString("poster", this.poster)
-    result.putString("title", this.title)
     if (Parcelable::class.java.isAssignableFrom(Date::class.java)) {
       result.putParcelable("date", this.date as Parcelable)
     } else if (Serializable::class.java.isAssignableFrom(Date::class.java)) {
@@ -39,6 +35,10 @@ data class ArticleFragmentArgs(
       throw UnsupportedOperationException(Date::class.java.name +
           " must implement Parcelable or Serializable or must be an Enum.")
     }
+    result.putString("category", this.category)
+    result.putString("category_icon", this.categoryIcon)
+    result.putString("poster", this.poster)
+    result.putString("title", this.title)
     return result
   }
 
@@ -53,7 +53,7 @@ data class ArticleFragmentArgs(
           throw IllegalArgumentException("Argument \"article_id\" is marked as non-null but was passed a null value.")
         }
       } else {
-        __articleId = "-1"
+        throw IllegalArgumentException("Required argument \"article_id\" is missing and does not have an android:defaultValue")
       }
       val __author : String?
       if (bundle.containsKey("author")) {
@@ -72,6 +72,21 @@ data class ArticleFragmentArgs(
         }
       } else {
         throw IllegalArgumentException("Required argument \"author_avatar\" is missing and does not have an android:defaultValue")
+      }
+      val __date : Date?
+      if (bundle.containsKey("date")) {
+        if (Parcelable::class.java.isAssignableFrom(Date::class.java) ||
+            Serializable::class.java.isAssignableFrom(Date::class.java)) {
+          __date = bundle.get("date") as Date?
+        } else {
+          throw UnsupportedOperationException(Date::class.java.name +
+              " must implement Parcelable or Serializable or must be an Enum.")
+        }
+        if (__date == null) {
+          throw IllegalArgumentException("Argument \"date\" is marked as non-null but was passed a null value.")
+        }
+      } else {
+        throw IllegalArgumentException("Required argument \"date\" is missing and does not have an android:defaultValue")
       }
       val __category : String?
       if (bundle.containsKey("category")) {
@@ -109,23 +124,8 @@ data class ArticleFragmentArgs(
       } else {
         throw IllegalArgumentException("Required argument \"title\" is missing and does not have an android:defaultValue")
       }
-      val __date : Date?
-      if (bundle.containsKey("date")) {
-        if (Parcelable::class.java.isAssignableFrom(Date::class.java) ||
-            Serializable::class.java.isAssignableFrom(Date::class.java)) {
-          __date = bundle.get("date") as Date?
-        } else {
-          throw UnsupportedOperationException(Date::class.java.name +
-              " must implement Parcelable or Serializable or must be an Enum.")
-        }
-        if (__date == null) {
-          throw IllegalArgumentException("Argument \"date\" is marked as non-null but was passed a null value.")
-        }
-      } else {
-        throw IllegalArgumentException("Required argument \"date\" is missing and does not have an android:defaultValue")
-      }
-      return ArticleFragmentArgs(__articleId, __author, __authorAvatar, __category, __categoryIcon,
-          __poster, __title, __date)
+      return ArticleFragmentArgs(__articleId, __author, __authorAvatar, __date, __category,
+          __categoryIcon, __poster, __title)
     }
   }
 }

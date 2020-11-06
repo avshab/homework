@@ -1656,6 +1656,11 @@ drawable ic_account_circle_black_24dp
 drawable ic_android_black_24dp
 drawable ic_arrow_down_24dp
 drawable ic_avatar
+drawable ic_baseline_camera_24
+drawable ic_baseline_crop_24
+drawable ic_baseline_delete_forever_24
+drawable ic_baseline_edit_24
+drawable ic_baseline_photo_library_24
 drawable ic_bookmark_black_24dp
 drawable ic_bookmark_border_black_24dp
 drawable ic_brightness_medium_black_24dp
@@ -1667,6 +1672,7 @@ drawable ic_dashboard_black_24dp
 drawable ic_delete_forever_black_24dp
 drawable ic_favorite_black_24dp
 drawable ic_favorite_border_black_24dp
+drawable ic_filter_list_24
 drawable ic_filter_list_black_24dp
 drawable ic_format_size_black_24dp
 drawable ic_insert_comment_black_24dp
@@ -1771,6 +1777,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id action_authFragment_to_privacyPolicyFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1781,6 +1788,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_edit_profile
 id action_filter
 id action_image
 id action_menu_divider
@@ -1788,6 +1796,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_nav_auth_to_registrationFragment
 id action_nav_profile_to_dialog_avatar_actions
 id action_search
 id action_text
@@ -1876,6 +1885,7 @@ id design_navigation_view
 id dialog_avatar_actions
 id dialog_button
 id dialog_chose_category
+id dialog_edit_profile
 id dimensions
 id direct
 id disableHome
@@ -1893,10 +1903,12 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id edit_profile
 id edit_query
 id end
 id enterAlways
 id enterAlwaysCollapsed
+id et_about
 id et_comment
 id et_login
 id et_name
@@ -2022,7 +2034,7 @@ id outline
 id packed
 id page_article
 id page_privacy_policy
-id page_registry
+id page_registration
 id parallax
 id parent
 id parentPanel
@@ -2197,6 +2209,7 @@ id visible_removing_fragment_view_tag
 id withText
 id withinBounds
 id wrap
+id wrap_about
 id wrap_comments
 id wrap_content
 id wrap_login
@@ -2289,6 +2302,7 @@ layout fragment_article
 layout fragment_articles
 layout fragment_auth
 layout fragment_choose_category_dialog
+layout fragment_edit_profile_dialog
 layout fragment_privacy_policy
 layout fragment_profile
 layout fragment_registration
@@ -2369,6 +2383,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu bottom_nav_menu
+menu menu_edit_profile
 menu menu_search
 mipmap ic_launcher
 mipmap ic_launcher_round

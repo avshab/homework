@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.ActivityResultRegistry
@@ -13,7 +12,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.VisibleForTesting
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
-import androidx.core.net.toUri
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
@@ -25,13 +23,14 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
 import ru.skillbranch.skillarticles.R
 import ru.skillbranch.skillarticles.ui.RootActivity
+import ru.skillbranch.skillarticles.ui.base.BaseActivity
 import ru.skillbranch.skillarticles.ui.base.BaseFragment
 import ru.skillbranch.skillarticles.ui.base.Binding
 import ru.skillbranch.skillarticles.ui.delegates.RenderProp
 import ru.skillbranch.skillarticles.ui.dialogs.AvatarActionsDialog
+import ru.skillbranch.skillarticles.ui.dialogs.EditProfileDialog
 import ru.skillbranch.skillarticles.viewmodels.base.IViewModelState
 import ru.skillbranch.skillarticles.viewmodels.base.NavigationCommand
 import ru.skillbranch.skillarticles.viewmodels.profile.PendingAction
@@ -41,24 +40,42 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class ProfileFragment() : BaseFragment<ProfileViewModel>() {
+
     //for testing
     private lateinit var resultRegistry: ActivityResultRegistry
-    var _mockFactory: ((SavedStateRegistryOwner)-> ViewModelProvider.Factory)? = null
+    var _mockFactory: ((SavedStateRegistryOwner) -> ViewModelProvider.Factory)? = null
 
-    public override val viewModel: ProfileViewModel by viewModels{
+    override val viewModel: ProfileViewModel by viewModels {
         _mockFactory?.invoke(this) ?: defaultViewModelProviderFactory
     }
+
     override val layout: Int = R.layout.fragment_profile
     override val binding: ProfileBinding by lazy { ProfileBinding() }
+
+    override val prepareToolbar: (BaseActivity.ToolbarBuilder.() -> Unit) = {
+        addMenuItem(
+            BaseActivity.MenuItemHolder(
+                "Edit",
+                R.id.action_edit_profile,
+                R.drawable.ic_baseline_edit_24,
+                null
+            ) {
+                val action = ProfileFragmentDirections.editProfile(
+                    binding.name,
+                    binding.about
+                )
+                viewModel.navigate(NavigationCommand.To(action.actionId, action.arguments))
+            }
+        )
+    }
 
     //testing constructor
     @VisibleForTesting(otherwise = VisibleForTesting.NONE)
     constructor(
         mockRoot: RootActivity,
         testRegistry: ActivityResultRegistry? = null,
-        mockFactory: ((SavedStateRegistryOwner)-> ViewModelProvider.Factory)? = null
+        mockFactory: ((SavedStateRegistryOwner) -> ViewModelProvider.Factory)? = null
     ) : this() {
         _mockRoot = mockRoot
         _mockFactory = mockFactory
@@ -67,22 +84,25 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     lateinit var permissionsLauncher: ActivityResultLauncher<Array<out String>>
+
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     lateinit var cameraLauncher: ActivityResultLauncher<Uri>
+
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     lateinit var galleryLauncher: ActivityResultLauncher<String>
+
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     lateinit var editPhotoLauncher: ActivityResultLauncher<Pair<Uri, Uri>>
+
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     lateinit var settingsLauncher: ActivityResultLauncher<Intent>
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
         if (!::resultRegistry.isInitialized) resultRegistry = requireActivity().activityResultRegistry
 
-        permissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions(),resultRegistry,::callbackPermissions)
+        permissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions(), resultRegistry, ::callbackPermissions)
         cameraLauncher = registerForActivityResult(ActivityResultContracts.TakePicture(), resultRegistry, ::callbackCamera)
         galleryLauncher = registerForActivityResult(ActivityResultContracts.GetContent(), resultRegistry, ::callbackGallery)
         editPhotoLauncher = registerForActivityResult(EditImageContract(), resultRegistry, ::callbackEditPhoto)
@@ -99,6 +119,7 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
                 AvatarActionsDialog.DELETE_KEY -> viewModel.handleDeleteAction()
                 AvatarActionsDialog.EDIT_KEY -> {
                     lifecycleScope.launch(Dispatchers.IO) {
+                        //Glide submit get it is sync call, don't call on UI thread
                         val sourceFile =
                             Glide.with(requireActivity()).asFile().load(binding.avatar).submit()
                                 .get()
@@ -112,10 +133,16 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
                             viewModel.handleEditAction(sourceUri, prepareTempUri())
                         }
                     }
+
                 }
             }
-
         }
+
+        setFragmentResultListener(EditProfileDialog.EDIT_PROFILE_KEY) { _, bundle ->
+            viewModel.handleEditProfile(bundle[EditProfileDialog.EDIT_PROFILE_NAME] as String, bundle[EditProfileDialog.EDIT_PROFILE_ABOUT] as String)
+        }
+
+        setHasOptionsMenu(true)
     }
 
     override fun setupViews() {
@@ -125,11 +152,12 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
             viewModel.navigate(NavigationCommand.To(action.actionId, action.arguments))
         }
 
-        viewModel.observerPermissions(viewLifecycleOwner) {
+        viewModel.observedPermissions(viewLifecycleOwner) {
+            //launch callback for request permissions
             permissionsLauncher.launch(it.toTypedArray())
         }
 
-        viewModel.observeActivityResults(viewLifecycleOwner) {
+        viewModel.observeActivityResults(viewLifecycleOwner) { it ->
             when (it) {
                 is PendingAction.GalleryAction -> galleryLauncher.launch(it.payload)
                 is PendingAction.SettingsAction -> settingsLauncher.launch(it.payload)
@@ -153,6 +181,7 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
         }
     }
 
+    //01:28:00
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun prepareTempUri(): Uri {
         val timestamp = SimpleDateFormat("HHmmss").format(Date())
@@ -202,6 +231,17 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
         viewModel.handlePermission(permissionsResult)
     }
 
+    private fun callbackGallery(result: Uri?) {
+        if (result != null) {
+            val inputStream = requireContext().contentResolver.openInputStream(result)
+            viewModel.handleUploadPhoto(inputStream)
+        }
+    }
+
+    private fun callbackSettings(result: ActivityResult) {
+        //do smt with result if need
+    }
+
     private fun callbackCamera(result: Boolean) {
         val (payload) = binding.pendingAction as PendingAction.CameraAction
         //if take photo from camera upload to server
@@ -214,13 +254,6 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
         }
     }
 
-    private fun callbackGallery(result: Uri?) {
-        if (result != null) {
-            val inputStream = requireContext().contentResolver.openInputStream(result)
-            viewModel.handleUploadPhoto(inputStream)
-        }
-    }
-
     private fun callbackEditPhoto(result: Uri?) {
         if (result != null) {
             val inputStream = requireContext().contentResolver.openInputStream(result)
@@ -230,10 +263,6 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
             val (payload) = binding.pendingAction as PendingAction.EditAction
             removeTempUri(payload.second)
         }
-    }
-
-    private fun callbackSettings(result: ActivityResult) {
-
     }
 
     inner class ProfileBinding : Binding() {
