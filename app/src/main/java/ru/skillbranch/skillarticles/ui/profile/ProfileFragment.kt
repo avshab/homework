@@ -153,9 +153,8 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
         }
     }
 
-    @VisibleForTesting
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun prepareTempUri(): Uri {
-
         val timestamp = SimpleDateFormat("HHmmss").format(Date())
         val storageDir = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         //create empty temp file with unique name
@@ -165,22 +164,24 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
             storageDir
         )
 
-        //must return content: uri not file: uri
+        //must return content: uri not file:uri
         val contentUri = FileProvider.getUriForFile(
             requireContext(),
             "${requireContext().packageName}.provider",
             tempFile
         )
+
         return contentUri
     }
 
-    @VisibleForTesting
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     fun removeTempUri(uri: Uri?) {
         uri ?: return
         requireContext().contentResolver.delete(uri, null, null)
     }
 
     private fun callbackPermissions(result: Map<String, Boolean>) {
+
         val permissionsResult = result.mapValues { (permission, isGranted) ->
             if (isGranted) true to true
             else false to ActivityCompat.shouldShowRequestPermissionRationale(
@@ -188,7 +189,7 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
                 permission
             )
         }
-        //remove tempt file by uri if permissions denied
+        //remove tempt file by uri if permission denied
         val isAllGranted = !permissionsResult.values.map { it.first }.contains(false)
         if (!isAllGranted) {
             val tempUri = when (val pendingAction = binding.pendingAction) {
@@ -198,7 +199,6 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
             }
             removeTempUri(tempUri)
         }
-
         viewModel.handlePermission(permissionsResult)
     }
 
