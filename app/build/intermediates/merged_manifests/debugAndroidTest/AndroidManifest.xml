@@ -7,7 +7,7 @@
         android:targetSdkVersion="29" />
 
     <instrumentation
-        android:name="ru.skillbranch.skillarticles.CustomTestRunner"
+        android:name="androidx.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
         android:label="Tests for ru.skillbranch.skillarticles"

@@ -1,4 +1,4 @@
-#Thu Nov 05 16:26:39 MSK 2020
+#Fri Nov 06 12:55:47 MSK 2020
 base.0=/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
