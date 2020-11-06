@@ -3,33 +3,33 @@
 3    package="ru.skillbranch.skillarticles.test" >
 4
 5    <uses-sdk
-5-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:5:5-74
+5-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:5:5-74
 6        android:minSdkVersion="23"
-6-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:5:15-41
+6-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:5:42-71
+7-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:5:42-71
 8
 9    <instrumentation
-9-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:11:5-15:78
+9-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:11:5-15:78
 10        android:name="ru.skillbranch.skillarticles.CustomTestRunner"
-10-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:11:22-82
+10-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:11:22-82
 11        android:functionalTest="false"
-11-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:14:22-52
+11-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:14:22-52
 12        android:handleProfiling="false"
-12-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:13:22-53
+12-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:13:22-53
 13        android:label="Tests for ru.skillbranch.skillarticles"
-13-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:15:22-76
+13-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:15:22-76
 14        android:targetPackage="ru.skillbranch.skillarticles" />
-14-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:12:22-74
+14-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:12:22-74
 15
 16    <application
-16-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:7:5-9:19
+16-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:7:5-9:19
 17        android:debuggable="true"
-17-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:7:18-43
+17-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:7:18-43
 18        android:extractNativeLibs="false" >
 19        <uses-library android:name="android.test.runner" />
-19-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:8:9-60
-19-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger3145736287659002008.xml:8:23-57
+19-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:8:9-60
+19-->/Users/ashab/MiddleAndroidHomework/KotlinExample/app/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger6175925639158596223.xml:8:23-57
 20    </application>
 21
 22</manifest>

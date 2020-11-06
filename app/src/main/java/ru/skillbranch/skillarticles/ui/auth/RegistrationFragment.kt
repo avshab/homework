@@ -1,6 +1,5 @@
 package ru.skillbranch.skillarticles.ui.auth
 
-import android.util.Log
 import android.util.Patterns
 import androidx.annotation.VisibleForTesting
 import androidx.fragment.app.viewModels
@@ -22,10 +21,9 @@ class RegistrationFragment() : BaseFragment<AuthViewModel>() {
     //for testing
     var _mockFactory: ((SavedStateRegistryOwner) -> ViewModelProvider.Factory)? = null
 
-    override val viewModel: AuthViewModel by viewModels()
-//    {
-//        _mockFactory?.invoke(this) ?: defaultViewModelProviderFactory
-//    }
+    override val viewModel: AuthViewModel by viewModels {
+        _mockFactory?.invoke(this) ?: defaultViewModelProviderFactory
+    }
 
     private val args: RegistrationFragmentArgs by navArgs()
     override val layout: Int = R.layout.fragment_registration
@@ -45,7 +43,6 @@ class RegistrationFragment() : BaseFragment<AuthViewModel>() {
 
         btn_login.setOnClickListener {
             if (checkPassword() && checkName() && checkEmail()) {
-                Log.i("--TAG", "do reg")
                 viewModel.handleRegister(et_name.text.toString(), et_login.text.toString(), et_password.text.toString(), null)
             }
         }

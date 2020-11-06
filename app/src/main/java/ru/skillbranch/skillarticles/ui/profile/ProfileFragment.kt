@@ -171,9 +171,6 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
             "${requireContext().packageName}.provider",
             tempFile
         )
-
-        Log.e("ProfileFragment", "file uri: ${tempFile.toUri()} content uri: $contentUri");
-
         return contentUri
     }
 
@@ -236,7 +233,7 @@ class ProfileFragment() : BaseFragment<ProfileViewModel>() {
     }
 
     private fun callbackSettings(result: ActivityResult) {
-        //TODO do something
+
     }
 
     inner class ProfileBinding : Binding() {
