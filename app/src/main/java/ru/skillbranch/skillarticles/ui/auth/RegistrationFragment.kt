@@ -42,11 +42,12 @@ class RegistrationFragment() : BaseFragment<AuthViewModel>() {
 
     override fun setupViews() {
 
-        btn_login.setOnClickListener {
+        btn_register.setOnClickListener {
             if (viewModel.isValid(
                     et_name.text.toString(),
                     et_login.text.toString(),
-                    et_password.text.toString()
+                    et_password.text.toString(),
+                    et_repeat_password.text.toString()
                 )
             ) {
                 viewModel.handleRegister(

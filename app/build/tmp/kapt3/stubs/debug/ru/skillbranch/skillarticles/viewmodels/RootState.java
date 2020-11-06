@@ -18,14 +18,20 @@ public final class RootState implements ru.skillbranch.skillarticles.viewmodels.
         super();
     }
     
+    /**
+     * override this if need save state in bundle
+     */
+    public void save(@org.jetbrains.annotations.NotNull()
+    androidx.lifecycle.SavedStateHandle outState) {
+    }
+    
+    /**
+     * override this if need restore state from bundle
+     */
     @org.jetbrains.annotations.NotNull()
     public ru.skillbranch.skillarticles.viewmodels.base.IViewModelState restore(@org.jetbrains.annotations.NotNull()
     androidx.lifecycle.SavedStateHandle savedState) {
         return null;
-    }
-    
-    public void save(@org.jetbrains.annotations.NotNull()
-    androidx.lifecycle.SavedStateHandle outState) {
     }
     
     public final boolean component1() {

@@ -1823,6 +1823,7 @@ id bounce
 id btn_bookmark
 id btn_like
 id btn_login
+id btn_register
 id btn_result_down
 id btn_result_up
 id btn_search_close
@@ -1900,6 +1901,7 @@ id et_comment
 id et_login
 id et_name
 id et_password
+id et_repeat_password
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2200,6 +2202,7 @@ id wrap_content
 id wrap_login
 id wrap_name
 id wrap_password
+id wrap_repeat_password
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
