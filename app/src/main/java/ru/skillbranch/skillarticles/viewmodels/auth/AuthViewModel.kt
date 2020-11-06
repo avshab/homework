@@ -25,7 +25,7 @@ class AuthViewModel(handle: SavedStateHandle) : BaseViewModel<AuthState>(handle,
 
     override fun handleRegister(name:String, login:String, password:String, dest:Int?) {
         launchSafety {
-            //repository.login(login, pass)
+            repository.handleRegister(name, login, password, dest)
             navigate(NavigationCommand.FinishLogin(dest))
         }
     }

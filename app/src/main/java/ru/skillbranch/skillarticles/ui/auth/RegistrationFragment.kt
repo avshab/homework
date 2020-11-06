@@ -43,7 +43,7 @@ class RegistrationFragment() : BaseFragment<AuthViewModel>() {
 
         btn_login.setOnClickListener {
             if (checkPassword() && checkName() && checkEmail()) {
-                viewModel.handleRegister(et_name.text.toString(), et_login.text.toString(), et_password.text.toString(), null)
+                viewModel.handleRegister(et_name.text.toString(), et_login.text.toString(), et_password.text.toString(), if (args.privateDestination == -1) null else args.privateDestination)
             }
         }
     }
