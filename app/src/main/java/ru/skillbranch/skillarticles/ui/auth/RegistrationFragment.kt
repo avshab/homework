@@ -11,6 +11,7 @@ import ru.skillbranch.skillarticles.R
 import ru.skillbranch.skillarticles.ui.RootActivity
 import ru.skillbranch.skillarticles.ui.base.BaseFragment
 import ru.skillbranch.skillarticles.viewmodels.auth.AuthViewModel
+import ru.skillbranch.skillarticles.viewmodels.base.Notify
 
 /**
  * Created by Anna Shabaeva on 05.11.2020
@@ -42,25 +43,19 @@ class RegistrationFragment() : BaseFragment<AuthViewModel>() {
     override fun setupViews() {
 
         btn_login.setOnClickListener {
-            if (checkPassword() && checkName() && checkEmail()) {
-                viewModel.handleRegister(et_name.text.toString(), et_login.text.toString(), et_password.text.toString(), if (args.privateDestination == -1) null else args.privateDestination)
+            if (viewModel.isValid(
+                    et_name.text.toString(),
+                    et_login.text.toString(),
+                    et_password.text.toString()
+                )
+            ) {
+                viewModel.handleRegister(
+                    et_name.text.toString(),
+                    et_login.text.toString(),
+                    et_password.text.toString(),
+                    if (args.privateDestination == -1) null else args.privateDestination
+                )
             }
         }
     }
-
-    private fun checkPassword(): Boolean {
-        return "[a-zA-Z0-9]{8,}".toRegex().matches(et_password.text)
-    }
-
-    private fun checkName(): Boolean {
-        return et_name.text.length > 2
-    }
-
-    private fun checkEmail(): Boolean {
-        with(et_login.text.toString()) {
-            return isNotBlank() && Patterns.EMAIL_ADDRESS.matcher(this)
-                .matches()
-        }
-    }
-
 }
